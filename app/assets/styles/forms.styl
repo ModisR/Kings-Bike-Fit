@@ -1,0 +1,45 @@
+form
+    display table
+
+    &.questionnaire
+        display block
+
+        th[scope=row]
+            text-align left
+        td
+            text-align center
+
+fieldset
+    margin 0
+    border 0
+    padding 0
+
+    display table-row-group
+    border-spacing .25em
+    .field
+        display table-row
+        &>*
+            display table-cell
+
+input
+    border 1px solid #999
+    border-radius .25em
+    padding 0 1em
+    line-height 2
+
+    &:focus
+        border-color #f81
+
+    &[type=submit]
+        display block
+        margin-left auto
+        margin-right .25rem
+
+        color #fff
+        background-color darken(col1, 20%)
+        border-color col1
+        cursor pointer
+
+        transition background-color .2s ease-in-out
+        &:hover, &:active
+            background-color darken(col1,40%)

@@ -1,0 +1,30 @@
+@(participants: java.util.List[Participant])(implicit req: RequestHeader)
+
+@import helper._
+
+@layout("Participants"){
+    @form( routes.ResearcherController.participantsEdit() ){
+        @CSRF.formField
+        <table>
+            <tr>
+                <th>E-mail Address
+                <th>Questionnaires Completed
+                <th>Group
+            </tr>
+            @for( p <- participants ){
+                <tr>
+                    <td>@p.email
+                    <td>@p.responses.size
+                    <td>
+                        <select name="participant_@p.id">
+                            @for( group <- Participant.ResearchGroup.values ){
+                            <option value="@group" @if(group==p.researchGroup){selected}>@group</option>
+                            }
+                        </select>
+                </tr>
+            }
+        </table>
+        <input type="submit" value="Update &checkmark;">
+    }
+    <p><a href="@routes.ResearcherController.viewParticipants()">Cancel &cross;</a></p>
+}

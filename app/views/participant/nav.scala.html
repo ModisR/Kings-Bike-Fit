@@ -1,0 +1,6 @@
+@()(implicit request: AppController#ParticipantRequest[_])
+
+<ul>
+    <li><a href="@routes.ParticipantController.viewQuestionnaires( request.participant.id )">Questionnaires</a>
+    <li><a href="@routes.ParticipantController.viewActivities( request.participant.id )">Activities</a>
+</ul>

@@ -1,0 +1,20 @@
+@(participants: java.util.List[Participant])(implicit req: RequestHeader)
+
+@layout("Participants"){
+    <table>
+        <tr>
+            <th>E-mail Address
+            <th>Questionnaires Completed
+            <th>Group
+        </tr>
+        @for( p <- participants ){
+            <tr>
+                <td>@p.email
+                <td>@p.responses.size
+                <td>@p.researchGroup
+            </tr>
+        }
+    </table>
+
+    <p><a href="@routes.ResearcherController.editParticipants()">Assign Groups &rarr;</a></p>
+}

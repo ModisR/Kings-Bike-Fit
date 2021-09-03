@@ -1,0 +1,27 @@
+@()(implicit req: RequestHeader)
+
+@import helper._
+
+@main("Home"){
+    <h3>Participants</h3>
+
+    <p>If you're partaking in the experiment, click <a href="@routes.FitbitController.auth(None)">here</a> to log in via Fitbit.</p>
+
+    <h3>Researchers</h3>
+
+    <p>If you're conducting the experiment, log in to see collected data here:</p>
+
+    @form(routes.HomeController.login) {
+        @CSRF.formField
+        <fieldset>
+            <div class="field">
+                <label for="user">Username</label><input id="user" name="username">
+            </div>
+            <div class="field">
+                <label for="pass">Password</label>
+                <input id="pass" name="password" type="password">
+            </div>
+        </fieldset>
+        <input type="submit" value="Login">
+    }
+}

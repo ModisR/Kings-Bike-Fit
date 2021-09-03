@@ -1,0 +1,30 @@
+@(activities: java.util.List[Activity])(implicit req: RequestHeader)
+
+@layout("Activities"){
+    <table>
+        <thead>
+        <tr>
+            <th>Subject ID
+            <th>Name
+            <th>Average Heart Rate
+            <th>Calories
+            <th>Distance
+            <th>Duration
+            <th>Start Time
+        </tr>
+        </thead>
+        <tbody>
+            @for( activity <- activities ) {
+                <tr>
+                    <td>@activity.participant.id
+                    <td>@activity.name
+                    <td>@activity.avgHeartRate
+                    <td>@activity.calories
+                    <td>@activity.distance
+                    <td>@activity.duration
+                    <td>@activity.startDateTime
+                </tr>
+            }
+        </tbody>
+    </table>
+}

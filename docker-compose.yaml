@@ -1,0 +1,39 @@
+services:
+  db:
+    build: docker/db
+    environment:
+      MYSQL_ROOT_PASSWORD: s3cret
+      MYSQL_DATABASE: kings_bike_fit
+    networks:
+      - kings_bike_fit
+    volumes:
+      - db-data:/var/lib/mysql
+
+  kings_bike_fit:
+    build: .
+    stdin_open: true
+    volumes:
+      - .:/opt/kings_bike_fit
+      - ../../.ivy2:/root/.ivy2
+      - ../../.sbt:/root/.sbt
+    ports:
+      - 9000:9000
+    networks:
+      - kings_bike_fit
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: db
+    ports:
+      - 9180:80
+    networks:
+      - kings_bike_fit
+
+networks:
+  kings_bike_fit: ~
+
+volumes:
+  db-data:
+
+version: "3.0"

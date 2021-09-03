@@ -1,0 +1,33 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# Public
+GET     /                           controllers.HomeController.index
+POST    /login                      controllers.HomeController.login
+POST    /logout                     controllers.HomeController.logout
+
+# Researcher
+GET     /participants               controllers.ResearcherController.viewParticipants
+GET     /participants/edit          controllers.ResearcherController.editParticipants
+POST    /participants/edit          controllers.ResearcherController.participantsEdit
+
+GET     /activities                 controllers.ResearcherController.viewActivities
+GET     /questionnaire-responses    controllers.ResearcherController.viewResponses
+
+# Participant
+GET     /participant/new                           controllers.ParticipantController.newParticipant
+POST    /participant/new                           controllers.ParticipantController.participantNew
+
+GET     /participant/:id/activities                controllers.ParticipantController.viewActivities( id: String )
+GET     /participant/:id/questionnaires            controllers.ParticipantController.viewQuestionnaires( id: String )
+
+POST    /questionnaire-responses/new               controllers.ParticipantController.responseNew( id: String )
+
+# OAuth2 Handlers
+GET     /fitbit/auth                controllers.FitbitController.auth( code: Option[String] ?= None )
+GET     /fitbit/sync/:id            controllers.FitbitController.sync( id: String )
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

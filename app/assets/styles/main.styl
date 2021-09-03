@@ -1,0 +1,101 @@
+contentWidth = 72rem
+contentPad = 1rem
+borderWidth = 2px
+
+headerHeight = 5rem
+footerHeight = 3rem
+
+
+col1 = #224568
+
+*
+	box-sizing border-box
+
+body
+	margin 0
+	background-image radial-gradient( col1, darken( col1, 50%))
+	font-family sans-serif
+
+header, footer
+	&>div
+		display table
+		&>*
+			display table-cell
+			vertical-align middle
+			padding 0 contentPad
+			&+*
+				text-align right
+
+
+header
+	position relative //paint <header> over top of <main>
+	margin-bottom (- headerHeight)
+
+	color #fff
+	background-color col1
+
+	&>div
+		margin 0 auto
+		width 100%
+		max-width contentWidth
+
+	img
+		display block
+		height headerHeight
+
+	form
+		text-align right
+		p
+			display inline-block
+			margin .5rem
+
+			&+input[type=submit]
+				display inline-block
+
+
+main
+	margin 0 auto
+	max-width contentWidth
+	min-height 100vh
+	padding headerHeight 1rem footerHeight
+
+	border borderWidth solid col1
+	color #333
+	background-color #fff
+
+
+footer
+	display table
+	width 100%
+
+	line-height footerHeight
+	margin-top (- footerHeight)
+	padding 0 1rem
+
+	color #fff
+	background-color #444
+
+	a
+		color #0cf
+
+	&>p
+		display table-cell
+		&+p
+			text-align right
+
+
+h1,h2,h3,th
+	color col1
+
+
+table
+	border-spacing 0
+	&>thead th
+		border-bottom 1px solid #ccc
+	&>tbody>tr+tr>*
+		border-top 1px dotted #ccc
+
+th,td
+	padding .25rem .5rem
+
+@require "forms"

@@ -1,0 +1,43 @@
+@(title: String, nav: Html = Html(""))(content: Html)(implicit req: RequestHeader)
+
+@import json.UserSession
+@import helper._
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" type="image/png" href='@routes.Assets.versioned("images/iconAob.svg")'>
+    <title>@title | King's Bike Fit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="screen" href='@routes.Assets.versioned("styles/main.css")'>
+</head>
+
+<body>
+    <header>
+        <div>
+            <a href="@routes.HomeController.index">
+                <img src='@routes.Assets.versioned("images/logoAo.svg")' alt="King's Bike Fit">
+            </a>
+            @for( session <- UserSession.getOpt ) {
+                @form(routes.HomeController.logout()) {
+                    @CSRF.formField
+                    <p>Welcome, @{ if(session.user.isLeft) "Researcher" else "Participant" }!</p>
+                    <input type="submit" value="Logout">
+                }
+            }
+        </div>
+    </header>
+    <main>
+        <nav>@nav</nav>
+        <h1>@title</h1>
+        @content
+    </main>
+    <footer>
+        <p>&copy; 2020 King's Bike Fit</p>
+
+        <p>Website Design by Modestas Ruk&scaron;naitis @mailTo("modestas.ruksnaitis@kcl.ac.uk")</p>
+    </footer>
+</body>
+
+</html>

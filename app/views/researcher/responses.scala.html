@@ -1,0 +1,32 @@
+@import services.QuestionnaireService.Response
+
+@(responses: List[Response])(implicit req: RequestHeader)
+
+@layout("Questionnaire Responses"){
+	@if( responses.nonEmpty ){
+		<table>
+			<thead>
+			<tr>
+				<th>Subject ID
+				@for( num <- 1 to responses.head.answers.length ){
+					<th>Qu @num
+				}
+				<th>Completed
+			</tr>
+			</thead>
+			<tbody>
+				@for( response <- responses ) {
+					<tr>
+						<td>@response.participantID
+						@for( answer <- response.answers ) {
+							<td>@answer
+						}
+						<td>@response.completed
+					</tr>
+				}
+			</tbody>
+		</table>
+	} else {
+		<p>No questionnaire responses yet.</p>
+	}
+}

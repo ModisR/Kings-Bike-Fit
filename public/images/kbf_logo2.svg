@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 284.56756 110.00001"
+   version="1.1"
+   id="svg48"
+   sodipodi:docname="kbf_logo2.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   width="284.56757"
+   height="110.00001">
+  <metadata
+     id="metadata54">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>King's College London</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs52" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1869"
+     inkscape:window-height="1025"
+     id="namedview50"
+     showgrid="false"
+     inkscape:zoom="3.6738884"
+     inkscape:cx="168.23071"
+     inkscape:cy="69.734747"
+     inkscape:window-x="51"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg48"
+     fit-margin-top="16"
+     fit-margin-left="16"
+     fit-margin-right="16"
+     fit-margin-bottom="16" />
+  <title
+     id="title2">King's College London</title>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:202.85534668px;line-height:0;font-family:sans-serif;-inkscape-font-specification:sans-serif;letter-spacing:-2px;word-spacing:0px;fill:#3c9669;fill-opacity:1;stroke:none;stroke-width:5.07138348"
+     x="106.73955"
+     y="54.931007"
+     id="text4711"><tspan
+       sodipodi:role="line"
+       x="105.73955"
+       y="54.931007"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:52.45441055px;line-height:0;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;letter-spacing:-2px;text-anchor:middle;fill:#3c9669;fill-opacity:1;stroke-width:5.07138348"
+       id="tspan5327">KING'S</tspan><tspan
+       sodipodi:role="line"
+       x="105.73955"
+       y="94"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:41.96353149px;line-height:0;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;letter-spacing:-2px;text-anchor:middle;fill:#3c9669;fill-opacity:1;stroke-width:5.07138348"
+       id="tspan5333">BIKE FIT</tspan></text>
+  <g
+     id="g5337"
+     transform="translate(-606.667,-241.74775)">
+    <path
+       sodipodi:nodetypes="ccccccc"
+       inkscape:connector-curvature="0"
+       id="path125-6"
+       d="m 805.667,257.74776 35.83783,35.83784 h 33.72974 l -6.32433,-14.75676 h -21.08108 l -21.08108,-21.08108 z"
+       style="fill:#3c9669;fill-opacity:1;stroke:none;stroke-width:1.32991815px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       sodipodi:nodetypes="ccccccc"
+       inkscape:connector-curvature="0"
+       id="path125-6-5"
+       d="m 805.667,335.74776 35.83783,-35.83784 h 33.72974 l -6.32433,14.75676 h -21.08108 l -21.08108,21.08108 z"
+       style="fill:#3c9669;fill-opacity:1;stroke:none;stroke-width:1.32991815px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+  </g>
+</svg>

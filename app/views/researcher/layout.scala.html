@@ -1,0 +1,16 @@
+@(title: String)(content: Html)(implicit req: RequestHeader)
+
+@pages = @{List (
+    "Participants"            -> routes.ResearcherController.viewParticipants(),
+    "Activities"              -> routes.ResearcherController.viewActivities(),
+    "Questionnaire Responses" -> routes.ResearcherController.viewResponses()
+)}
+
+@main( title ){
+    <ul>
+        @for( p <- pages ){
+            <li><a href="@p._2">@p._1</a>
+        }
+    </ul>
+    @content
+}

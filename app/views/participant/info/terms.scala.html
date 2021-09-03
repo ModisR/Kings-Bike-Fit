@@ -1,0 +1,42 @@
+@()(implicit req: RequestHeader)
+
+@import helper._
+
+<h2>Terms</h2>
+
+<p>I understand that by signing below I am agreeing to take part in the research described in the information form, and that I have read and understood this information sheet.</p>
+
+
+<p>I understand that my participation is entirely voluntary, that I can choose not to participate in part or all of the study, and that I can withdraw at any stage during the data collection (until the 5/06/2020) without having to give a reason and without being penalised in any way.</p>
+
+
+<p>I consent to the processing of my information for the purposes of this research study. I understand that such information will be treated as strictly confidential (subject to legal limitations) and handled in accordance with the Data Protection Act 2018.</p>
+
+
+<p>I understand that my data will be saved in a password protected file on the R: drive and remain anonymous throughout the study and at termination.</p>
+
+
+<p>I understand that this data may be published, however, the data will be archived on a private research team only area on the R: Drive and Fitbit Web API.</p>
+
+
+<p>I am aware that anonymous data could be published with any journal article using the <a href="http://www.osf.io">Open Science Framework</a> although my personal name and data will never be made public or connected.</p>
+
+<p>Do you agree to these terms?</p>
+
+<ul>
+    <li><a href="@routes.HomeController.index()">I agree</a></li>
+    <li><a href="@routes.HomeController.index()">I do not agree</a></li>
+</ul>
+
+<p>Finally, enter your 7 digit K number to complete registration:</p>
+
+@form(routes.ParticipantController.participantNew()) {
+    @CSRF.formField
+    <fieldset>
+        <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" name="email">
+        </div>
+    </fieldset>
+    <input type="submit" value="Sign Up">
+}

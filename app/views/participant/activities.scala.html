@@ -1,0 +1,32 @@
+@()(implicit req: AppController#ParticipantRequest[_])
+
+@main("Fitbit Data", nav()){
+<h2>Welcome!</h2>
+
+<p>Thank you for contributing to our research. Here is the data your Fitbit has supplied:</p>
+
+<table>
+	<thead>
+	<tr>
+		<th>Name
+		<th>Average Heart Rate
+		<th>Calories
+		<th>Distance
+		<th>Duration
+		<th>Start Time
+	</tr>
+	</thead>
+	<tbody>
+		@for( activity <- req.participant.activities ){
+		<tr>
+			<td>@activity.name
+			<td>@activity.avgHeartRate
+			<td>@activity.calories
+			<td>@activity.distance
+			<td>@activity.duration
+			<td>@activity.startDateTime
+		</tr>
+		}
+	</tbody>
+</table>
+}

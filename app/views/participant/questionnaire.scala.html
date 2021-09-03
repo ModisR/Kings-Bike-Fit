@@ -1,0 +1,77 @@
+@import services.QuestionnaireService.Response
+@import conf.QuestionnairePage
+@import java.time.LocalDate
+@import helper._
+
+@(pages: Vector[QuestionnairePage], dates: Vector[LocalDate], responses: List[Response])(
+	implicit req: AppController#ParticipantRequest[_])
+
+@main("Questionnaire", nav()){
+	@if( pages.nonEmpty ){
+		<p>Please indicate the most applicable responses to the following statements:</p>
+
+		@form(routes.ParticipantController.responseNew(req.participant.id), Symbol("class") -> "questionnaire") {
+			@CSRF.formField
+			@for( (page, p) <- pages.zipWithIndex ){
+				<table>
+					<tr>
+						<th>
+						@for( response <- page.responses){
+						<th scope="col">@response
+						}
+					</tr>
+					@for( (question, q) <- page.questions.zipWithIndex){
+					<tr>
+						<th scope="row">@question
+						@for( value <- 1 to page.responses.length ) {
+						<td><input name="qu@p@q" type="radio" value="@value">
+						}
+					</tr>
+					}
+				</table>
+			}
+			<input type="submit" value="Submit">
+		}
+
+		<p>Thank you for completing this short questionnaire. We will contact you again in a few weeks for the second set of questions. If you have any questions or concerns please contact Clara Pappalettera at k19053218@@kcl.ac.uk.</p>
+	} else {
+		<p>You are up to date on questionnaires</p>
+	}
+
+	<h2>Upcoming Questionnaires</h2>
+	@if( dates.nonEmpty ){
+	<ul>
+		@for( date <- dates ){
+		<li>@date
+		}
+	</ul>
+	} else {
+	<p>No more questionnaires after today!</p>
+	}
+
+	<h2>Previous Responses</h2>
+	@if( responses.nonEmpty ){
+		<table>
+			<thead>
+			<tr>
+				@for( num <- 1 to responses.head.answers.length ){
+					<th>Qu @num
+				}
+				<th>Completed
+			</tr>
+			</thead>
+			<tbody>
+				@for( response <- responses ) {
+					<tr>
+						@for( answer <- response.answers ) {
+							<td>@answer
+						}
+						<td>@response.completed
+					</tr>
+				}
+			</tbody>
+		</table>
+	} else {
+		<p>No questionnaire responses yet.</p>
+	}
+}
